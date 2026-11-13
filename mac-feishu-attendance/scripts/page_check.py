@@ -10,7 +10,8 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 PACKAGE = "com.ss.android.lark"
-NO_GO = ("请假", "休假", "加班", "换班", "调班", "出差", "外出", "无需打卡", "休息日", "非工作日", "未加入考勤组")
+NO_GO = ("请假", "休假", "加班", "换班", "调班", "出差", "外出", "无需打卡", "休息日", "非工作日", "未加入考勤组",
+         "虚拟定位", "模拟位置", "模拟定位", "位置模拟", "疑似作弊", "作弊打卡", "设备异常", "设备风险")
 
 
 class Ineligible(Exception):

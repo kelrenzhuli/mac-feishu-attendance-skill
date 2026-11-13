@@ -11,7 +11,7 @@ description: 在 Apple Silicon Mac 上安装或排查 Avo 安卓模拟器、飞�
 
 1. 使用 [Avo 官方版本](https://github.com/nizwar/avo) 和 [飞书官方版本](https://www.feishu.cn/download)；核对芯片、macOS 版本、外置盘挂载和 Avo 实际数据位置。用 Avo 自带的存储迁移功能，不手工替换用户数据盘。用户可指定中文和安装位置。
 2. 先在飞书「假勤 → 设置」核对上下班极速打卡、迟到时自动打卡和自动更新下班卡的设置。准确告知用户：[飞书要求在有效时间内将应用重新激活至前台](https://www.feishu.cn/hc/zh-CN/articles/360049067448-%E8%AE%BE%E7%BD%AE%E6%9E%81%E9%80%9F%E6%89%93%E5%8D%A1)，单纯保持应用运行不能证明会打卡。
-3. 用只读检查对照 Mac 的实际连接、安卓 Wi-Fi 和飞书显示的考勤范围。SSID/BSSID 或定位缺失时不要臆测。若需要本机 Wi-Fi 同步，先读 [references/wifi-experiment.md](references/wifi-experiment.md)；这里的内核补丁仅适用于特定构建，且不能代替真实无线连接。
+3. 用只读检查对照 Mac 的实际连接、安卓 Wi-Fi 和飞书显示的考勤范围。SSID/BSSID 或定位缺失时不要臆测。若飞书提示虚拟定位、模拟位置、疑似作弊或设备风险，停止定时激活并告知用户；页面显示在范围内和测试组打卡成功都不能证明正式考勤被认可。若需要本机 Wi-Fi 同步，先读 [references/wifi-experiment.md](references/wifi-experiment.md)；这里的内核补丁仅适用于特定构建，且不能代替真实无线连接。
 4. 如果用户要求定时激活，先确认具体时间、班次、休息日、请假、加班和失败处理；已有明确选择时直接沿用。按 [references/automation.md](references/automation.md) 实施：运行前核验账号、当天班次、实际 Wi-Fi、审批和已有记录，证据不足时跳过；不要盲点打卡按钮或无限重试。
 5. 优先在用户提供的测试考勤组验证；分别记录页面是否识别 Wi-Fi、模拟器能否启动、极速打卡是否实际产生记录。按钮可点击不等于打卡成功。无需实际提交时，只做只读预演。
 6. 报告持久化边界：用户登录后的 LaunchAgent、Mac 睡眠、外置盘、Wi-Fi 和飞书登录；明确模拟器重启、整机重启及真实公司考勤哪些测试已做、哪些尚未做。

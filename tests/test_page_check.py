@@ -82,6 +82,13 @@ class PageCheckTests(unittest.TestCase):
         ET.SubElement(root, "node", {"package": page_check.PACKAGE, "text": "今日请假"})
         self.assert_skipped(root)
 
+    def test_virtual_location_or_device_risk_skips(self):
+        for warning in ("检测到使用虚拟定位", "模拟位置信息", "疑似作弊", "设备风险"):
+            with self.subTest(warning=warning):
+                root = fake_page()
+                ET.SubElement(root, "node", {"package": page_check.PACKAGE, "text": warning})
+                self.assert_skipped(root)
+
     def test_ambiguous_ui_skips(self):
         root = fake_page()
         find_text(root, "上班打卡").set("package", "another.app")
