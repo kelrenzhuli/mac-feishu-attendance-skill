@@ -83,7 +83,8 @@ class PageCheckTests(unittest.TestCase):
         self.assert_skipped(root)
 
     def test_virtual_location_or_device_risk_skips(self):
-        for warning in ("检测到使用虚拟定位", "模拟位置信息", "疑似作弊", "设备风险"):
+        for warning in ("检测到使用虚拟定位", "模拟位置信息", "疑似作弊", "设备风险", "极速打卡失败，请手动打卡",
+                        "检测到当前打卡设备的操作环境疑似存在风险"):
             with self.subTest(warning=warning):
                 root = fake_page()
                 ET.SubElement(root, "node", {"package": page_check.PACKAGE, "text": warning})
