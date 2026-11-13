@@ -1,0 +1,3 @@
+interface:
+  display_name: "Mac 飞书考勤自动化"
+  short_description: "配置并验证 Mac 上模拟器、网络与飞书极速打卡流程"

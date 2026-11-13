@@ -1,0 +1,9 @@
+{
+  "account_text": "你好，示例用户",
+  "organization_text": "示例组织",
+  "group_texts": ["示例工作日打卡"],
+  "wifi_ssid": "ExampleNet",
+  "expected_start": "09:00",
+  "expected_end": "18:00",
+  "timezone": "Asia/Shanghai"
+}
